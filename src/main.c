@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "gpio.h"
+#include "stdbool.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -92,33 +93,17 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==GPIO_PIN_SET)
-   {
-      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, SET);
-      //HAL_Delay(100);
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
-      //HAL_Delay(100);
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, SET);
-      //HAL_Delay(100);
-      
-    }
-    FLASH_END;
-    /*if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==1)*/
-   if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==1)
-   {
-       HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, RESET);
-       //HAL_Delay(50);
-       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
-       //HAL_Delay(50);
-       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, RESET);
-       //HAL_Delay(50);
-    }
-    FLASH_END;
-  }
-  
-  /* USER CODE END 3 */
-}
 
+  if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==GPIO_PIN_SET)
+  {
+   HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
+   //while (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==GPIO_PIN_SET);  // if on keep pressing button u dont want to change the status 
+   HAL_Delay(100);
+  }
+
+    /* USER CODE END 3 */
+}
+}
 /**
   * @brief System Clock Configuration
   * @retval None
