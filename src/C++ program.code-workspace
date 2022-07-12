@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\C++ program"
+		},
+		{
+			"name": "STM-32_led",
+			"path": "..\\..\\..\\STM-32_led"
+		},
+		{
+			"name": "Nucleo_STM32L496_led",
+			"path": "..\\..\\..\\NucleoSTM32L496\\Nucleo_STM32L496_led"
+		},
+		{
+			"name": "STM_L496_PushButton",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
