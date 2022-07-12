@@ -97,8 +97,8 @@ int main(void)
   if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==GPIO_PIN_SET)
   {
    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
-   //while (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==GPIO_PIN_SET);  // if on keep pressing button u dont want to change the status 
-   HAL_Delay(100);
+   while (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)==GPIO_PIN_SET);  // if on keep pressing button u dont want to change the status 
+   //HAL_Delay(100);                   //IF YOU WANT TO BLINK THE LIGHT ON KEEP PRESSING THE BUTTON
   }
 
     /* USER CODE END 3 */
